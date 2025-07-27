@@ -19,14 +19,11 @@ export default defineConfig({
   css: {
     devSourcemap: true,
     modules: {
-      localsConvention: "camelCase",
+      localsConvention: "dashesOnly",
       scopeBehaviour: "local",
       generateScopedName: "[name]_[local]_[hash:5]",
       hashPrefix: "",
     }
-  },
-  optimizeDeps: {
-    include: ['./src/**'],
   },
   build: {
     rollupOptions: {
