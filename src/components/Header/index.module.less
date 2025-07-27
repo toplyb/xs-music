@@ -1,0 +1,109 @@
+.header-container {
+  width: 100%;
+  border-bottom: 1px solid #0000001a;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+
+  .header-content {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      cursor: pointer;
+      .logo-name {
+        width: 30px;
+        height: 30px;
+        background-color: #030213;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+
+      .logo-detail {
+        font-size: 22px;
+        font-weight: bold;
+        white-space: break-spaces;
+        margin-left: 10px;
+      }
+    }
+
+    .menus {
+      flex: 1;
+
+      .menu-item {
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 10px 20px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #e9ebef;
+          border-radius: 5px;
+        }
+      }
+    }
+
+    .search {
+      flex: 2;
+      display: flex;
+      position: relative;
+      background-color: #f3f3f5;
+      border-radius: 4px;
+      padding: 10px;
+      transition: box-shadow 0.3s ease;
+
+      &:focus-within {
+        box-shadow: 0 0 3px 3px #e0e0e0;
+      }
+
+      img {
+        width: 20px;
+        cursor: pointer;
+      }
+
+      input {
+        outline: none;
+        border: none;
+        background-color: #f3f3f5;
+        margin-left: 20px;
+        flex: 1;
+        font-size: 14px;
+      }
+    }
+
+    .user {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      div {
+        cursor: pointer;
+        padding: 5px 10px;
+
+        &:first-child {
+          margin-right: 20px;
+        }
+
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #e9ebef;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}

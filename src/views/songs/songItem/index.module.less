@@ -1,0 +1,67 @@
+.song-item-container {
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 15px;
+
+  &:hover {
+    background-color: #ececf0;
+  }
+
+  .song-item-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .left {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .number {
+        width: 14px;
+        color: #717182;
+        text-align: center;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .song-detail {
+        display: flex;
+        margin-left: 30px;
+
+        img {
+          width: 30px;
+        }
+
+        div {
+          display: flex;
+          flex-direction: column;
+          margin-left: 15px;
+          font-size: 14px;
+
+          .song-name {
+            color: #030213;
+            margin-bottom: 10px;
+            font-weight: bold;
+          }
+
+          .song-record {
+            color: #717182;
+          }
+        }
+      }
+    }
+
+    .right {
+      color: #717182;
+      font-size: 14px;
+
+      .time-duration {
+        margin-left: 30px;
+      }
+    }
+  }
+}

@@ -19,7 +19,7 @@ export default defineConfig({
   css: {
     devSourcemap: true,
     modules: {
-      localsConvention: "dashesOnly",
+      localsConvention: "camelCaseOnly",
       scopeBehaviour: "local",
       generateScopedName: "[name]_[local]_[hash:5]",
       hashPrefix: "",
