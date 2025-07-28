@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import style from './index.module.less';
-import playImg from '@/assets/images/play.svg';
+import styles from './index.module.less';
+import PlaySvg from '@/assets/images/play.svg?react';
 import { type ISongItem, setSongStatus } from '@/features/song';
 import { useAppDispatch } from '@/hooks/useAppDispatch.ts';
+import SongInfo from '@/views/songs/songInfo';
 
 // props 只包含一个 song 对象
-interface SongItemProps {
+export interface SongItemProps {
   song: ISongItem;
 }
 
@@ -28,31 +29,25 @@ const SongItem: React.FC<SongItemProps> = ({ song }) => {
     if (!mouseEnter) {
       return <span>{song.id}</span>;
     } else {
-      return <img src={playImg} alt="" />;
+      return <PlaySvg></PlaySvg>;
     }
   };
 
   return (
     <div
-      className={style.songItemContainer}
+      className={styles.songItemContainer}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={handleClickSong}
     >
-      <div className={style.songItemContent}>
-        <div className={style.left}>
-          <div className={style.number}>{showIdOrImg()}</div>
-          <div className={style.songDetail}>
-            <img src={song.imgUrl} alt="" />
-            <div>
-              <span className={style.songName}>{song.name}</span>
-              <span className={style.songRecord}>{song.record}</span>
-            </div>
-          </div>
+      <div className={styles.songItemContent}>
+        <div className={styles.left}>
+          <div className={styles.number}>{showIdOrImg()}</div>
+          <SongInfo song={song}></SongInfo>
         </div>
-        <div className={style.right}>
+        <div className={styles.right}>
           <span>{song.singer}</span>
-          <span className={style.timeDuration}>{song.timeDuration}</span>
+          <span className={styles.timeDuration}>{song.timeDuration}</span>
         </div>
       </div>
     </div>

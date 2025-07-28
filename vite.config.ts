@@ -2,11 +2,13 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import path from 'path'
 import viteCompression from 'vite-plugin-compression'
+import svgr from 'vite-plugin-svgr';
 
 export default defineConfig({
   plugins: [
     react(),
     viteCompression(),
+    svgr(),
   ],
   resolve: {
     alias: {

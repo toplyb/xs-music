@@ -1,7 +1,7 @@
 import styles from './index.module.less';
-import search from '@/assets/images/search.svg';
-import user from '@/assets/images/user.svg';
-import notice from '@/assets/images/notice.svg';
+import SearchSvg from '@/assets/images/search.svg?react';
+import NoticeSvg from '@/assets/images/notice.svg?react';
+import UserSvg from '@/assets/images/user.svg?react';
 
 const Header = () => {
   const menuList = [
@@ -32,16 +32,16 @@ const Header = () => {
           </div>
 
           <div className={styles.search}>
-            <img src={search} alt="" />
+            <SearchSvg></SearchSvg>
             <input type="text" />
           </div>
 
           <div className={styles.user}>
             <div>
-              <img src={notice} alt="" />
+              <UserSvg></UserSvg>
             </div>
             <div>
-              <img src={user} alt="" />
+              <NoticeSvg></NoticeSvg>
             </div>
           </div>
         </div>
