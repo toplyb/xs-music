@@ -4,11 +4,15 @@ import 'normalize.css/normalize.css';
 import '@/css/index.less';
 import App from './App.tsx';
 import { BrowserRouter } from 'react-router-dom';
+import { store } from '@/app/store.ts';
+import { Provider } from 'react-redux';
 
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </BrowserRouter>
   </React.StrictMode>
 );

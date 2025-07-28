@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
-import type { ISongItem } from '@/views/songs';
 import style from './index.module.less';
 import playImg from '@/assets/images/play.svg';
+import { type ISongItem, setSongStatus } from '@/features/song';
+import { useAppDispatch } from '@/hooks/useAppDispatch.ts';
 
 // props 只包含一个 song 对象
 interface SongItemProps {
   song: ISongItem;
-  onChangeStatus: (id: number) => void;
 }
 
-const SongItem: React.FC<SongItemProps> = ({ song, onChangeStatus }) => {
+const SongItem: React.FC<SongItemProps> = ({ song }) => {
+  const dispatch = useAppDispatch();
   const [mouseEnter, setMouseEnter] = useState(false);
   const handleMouseEnter = () => {
     setMouseEnter(true);
@@ -20,7 +21,7 @@ const SongItem: React.FC<SongItemProps> = ({ song, onChangeStatus }) => {
   };
 
   const handleClickSong = () => {
-    onChangeStatus(song.id);
+    dispatch(setSongStatus(song.id));
   };
 
   const showIdOrImg = () => {
