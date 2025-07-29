@@ -7,6 +7,7 @@ import PauseSvg from '@/assets/images/player/pause.svg?react';
 import NextSvg from '@/assets/images/player/next.svg?react';
 import OrderSvg from '@/assets/images/player/order.svg?react';
 import VolumeSvg from '@/assets/images/player/volume.svg?react';
+import Progress from '@/components/Progress';
 
 const Player = () => {
   const song = {
@@ -59,17 +60,13 @@ const Player = () => {
         </div>
         <div className={styles.bottom}>
           <span className={styles.time}>0:00</span>
-          <div className={styles.progress}>
-            <span></span>
-          </div>
+          <Progress width="400"></Progress>
           <span className={styles.time}>4:30</span>
         </div>
       </div>
       <div className={styles.right}>
         <VolumeSvg></VolumeSvg>
-        <div className={styles.progress} style={{ width: '100px' }}>
-          <span></span>
-        </div>
+        <Progress width="100"></Progress>
       </div>
     </div>
   );

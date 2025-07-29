@@ -23,6 +23,10 @@
         &:not(.bg):hover {
           background-color: #e9ebef;
           border-radius: 5px;
+
+          svg {
+            color: #000000;
+          }
         }
 
         svg {
@@ -45,10 +49,14 @@
       .time {
         color: #717182;
         font-size: 13px;
-      }
 
-      .progress {
-        margin: 0 30px;
+        &:first-child {
+          margin-right: 30px;
+        }
+
+        &:last-child {
+          margin-left: 30px;
+        }
       }
     }
   }
@@ -57,20 +65,10 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
     svg {
       width: 14px;
+      margin-right: 20px;
     }
-
-    .progress {
-      margin-left: 20px;
-    }
-  }
-
-  .progress {
-    width: 400px;
-    height: 15px;
-    display: inline-block;
-    background-color: #ececf0;
-    border-radius: 20px;
   }
 }
