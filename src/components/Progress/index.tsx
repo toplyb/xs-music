@@ -4,14 +4,15 @@ import React, { useEffect, useRef, useState } from 'react';
 export interface ProgressProps {
   width: string;
   value?: number;
+  onChange?: (value: number) => void;
 }
 
-const Progress: React.FC<ProgressProps> = ({ width }) => {
+const Progress: React.FC<ProgressProps> = ({ width, value = 0, onChange }) => {
+  const BALL_SIZE = 15;
   const [dragging, setDragging] = useState(false);
-  const [left, setLeft] = useState(0);
+  const [left, setLeft] = useState(value * (Number(width) - BALL_SIZE));
   const parentRef = useRef<HTMLDivElement>(null);
   const progressRef = useRef<HTMLSpanElement>(null);
-  const BALL_SIZE = 15;
 
   const handleMouseDown = (e: React.MouseEvent<HTMLSpanElement>) => {
     e.preventDefault();
@@ -31,6 +32,7 @@ const Progress: React.FC<ProgressProps> = ({ width }) => {
       newLeft = Math.max(0, Math.min(newLeft, rect.width - BALL_SIZE));
 
       setLeft(newLeft);
+      if (onChange) onChange(newLeft / (rect.width - BALL_SIZE));
     };
 
     const handleMouseUp = () => {

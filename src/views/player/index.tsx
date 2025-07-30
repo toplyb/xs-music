@@ -37,6 +37,14 @@ const Player = () => {
     }
   };
 
+  const handlerMusicProgress = (value: number) => {
+    console.log(value);
+  };
+
+  const handlerVolumeProgress = (value: number) => {
+    console.log(value);
+  };
+
   return (
     <div className={styles.playerContainer}>
       <div className={styles.left}>
@@ -60,13 +68,13 @@ const Player = () => {
         </div>
         <div className={styles.bottom}>
           <span className={styles.time}>0:00</span>
-          <Progress width="400"></Progress>
+          <Progress onChange={handlerMusicProgress} width="400"></Progress>
           <span className={styles.time}>4:30</span>
         </div>
       </div>
       <div className={styles.right}>
         <VolumeSvg></VolumeSvg>
-        <Progress width="100"></Progress>
+        <Progress onChange={handlerVolumeProgress} width="100"></Progress>
       </div>
     </div>
   );
